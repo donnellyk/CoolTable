@@ -1,0 +1,301 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0AB5395213FC06B500123511 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB5395113FC06B500123511 /* UIKit.framework */; };
+		0AB5395413FC06B500123511 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB5395313FC06B500123511 /* Foundation.framework */; };
+		0AB5395613FC06B500123511 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB5395513FC06B500123511 /* CoreGraphics.framework */; };
+		0AB5395C13FC06B500123511 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0AB5395A13FC06B500123511 /* InfoPlist.strings */; };
+		0AB5395E13FC06B500123511 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5395D13FC06B500123511 /* main.m */; };
+		0AB5396213FC06B500123511 /* CoolTableAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5396113FC06B500123511 /* CoolTableAppDelegate.m */; };
+		0AB5396513FC06B500123511 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5396413FC06B500123511 /* RootViewController.m */; };
+		0AB5396713FC06B500123511 /* DetailViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 0AB5396613FC06B500123511 /* DetailViewController.h */; };
+		0AB5396913FC06B500123511 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5396813FC06B500123511 /* DetailViewController.m */; };
+		0AB5396C13FC06B500123511 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AB5396A13FC06B500123511 /* RootViewController.xib */; };
+		0AB5396F13FC06B500123511 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AB5396D13FC06B500123511 /* DetailViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0AB5394D13FC06B500123511 /* CoolTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AB5395113FC06B500123511 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0AB5395313FC06B500123511 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0AB5395513FC06B500123511 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0AB5395913FC06B500123511 /* CoolTable-Info.plist */ = {isa = PBXFileReference; path = "CoolTable-Info.plist"; sourceTree = "<group>"; };
+		0AB5395B13FC06B500123511 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0AB5395D13FC06B500123511 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0AB5395F13FC06B500123511 /* CoolTable-Prefix.pch */ = {isa = PBXFileReference; path = "CoolTable-Prefix.pch"; sourceTree = "<group>"; };
+		0AB5396013FC06B500123511 /* CoolTableAppDelegate.h */ = {isa = PBXFileReference; path = CoolTableAppDelegate.h; sourceTree = "<group>"; };
+		0AB5396113FC06B500123511 /* CoolTableAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolTableAppDelegate.m; sourceTree = "<group>"; };
+		0AB5396313FC06B500123511 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		0AB5396413FC06B500123511 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		0AB5396613FC06B500123511 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		0AB5396813FC06B500123511 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		0AB5396B13FC06B500123511 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		0AB5396E13FC06B500123511 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0AB5394A13FC06B500123511 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AB5395213FC06B500123511 /* UIKit.framework in Frameworks */,
+				0AB5395413FC06B500123511 /* Foundation.framework in Frameworks */,
+				0AB5395613FC06B500123511 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0AB5394213FC06B500123511 = {
+			isa = PBXGroup;
+			children = (
+				0AB5395713FC06B500123511 /* CoolTable */,
+				0AB5395013FC06B500123511 /* Frameworks */,
+				0AB5394E13FC06B500123511 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0AB5394E13FC06B500123511 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0AB5394D13FC06B500123511 /* CoolTable.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0AB5395013FC06B500123511 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0AB5395113FC06B500123511 /* UIKit.framework */,
+				0AB5395313FC06B500123511 /* Foundation.framework */,
+				0AB5395513FC06B500123511 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0AB5395713FC06B500123511 /* CoolTable */ = {
+			isa = PBXGroup;
+			children = (
+				0AB5396013FC06B500123511 /* CoolTableAppDelegate.h */,
+				0AB5396113FC06B500123511 /* CoolTableAppDelegate.m */,
+				0AB5396313FC06B500123511 /* RootViewController.h */,
+				0AB5396413FC06B500123511 /* RootViewController.m */,
+				0AB5396613FC06B500123511 /* DetailViewController.h */,
+				0AB5396813FC06B500123511 /* DetailViewController.m */,
+				0AB5396A13FC06B500123511 /* RootViewController.xib */,
+				0AB5396D13FC06B500123511 /* DetailViewController.xib */,
+				0AB5395813FC06B500123511 /* Supporting Files */,
+			);
+			path = CoolTable;
+			sourceTree = "<group>";
+		};
+		0AB5395813FC06B500123511 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0AB5395913FC06B500123511 /* CoolTable-Info.plist */,
+				0AB5395A13FC06B500123511 /* InfoPlist.strings */,
+				0AB5395D13FC06B500123511 /* main.m */,
+				0AB5395F13FC06B500123511 /* CoolTable-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0AB5394C13FC06B500123511 /* CoolTable */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AB5397213FC06B500123511 /* Build configuration list for PBXNativeTarget "CoolTable" */;
+			buildPhases = (
+				0AB5394913FC06B500123511 /* Sources */,
+				0AB5394A13FC06B500123511 /* Frameworks */,
+				0AB5394B13FC06B500123511 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoolTable;
+			productName = CoolTable;
+			productReference = 0AB5394D13FC06B500123511 /* CoolTable.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0AB5394413FC06B500123511 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "-";
+			};
+			buildConfigurationList = 0AB5394713FC06B500123511 /* Build configuration list for PBXProject "CoolTable" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0AB5394213FC06B500123511;
+			productRefGroup = 0AB5394E13FC06B500123511 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0AB5394C13FC06B500123511 /* CoolTable */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0AB5394B13FC06B500123511 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AB5395C13FC06B500123511 /* InfoPlist.strings in Resources */,
+				0AB5396713FC06B500123511 /* DetailViewController.h in Resources */,
+				0AB5396C13FC06B500123511 /* RootViewController.xib in Resources */,
+				0AB5396F13FC06B500123511 /* DetailViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0AB5394913FC06B500123511 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AB5395E13FC06B500123511 /* main.m in Sources */,
+				0AB5396213FC06B500123511 /* CoolTableAppDelegate.m in Sources */,
+				0AB5396513FC06B500123511 /* RootViewController.m in Sources */,
+				0AB5396913FC06B500123511 /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0AB5395A13FC06B500123511 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0AB5395B13FC06B500123511 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0AB5396A13FC06B500123511 /* RootViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0AB5396B13FC06B500123511 /* en */,
+			);
+			name = RootViewController.xib;
+			sourceTree = "<group>";
+		};
+		0AB5396D13FC06B500123511 /* DetailViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0AB5396E13FC06B500123511 /* en */,
+			);
+			name = DetailViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0AB5397013FC06B500123511 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0AB5397113FC06B500123511 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0AB5397313FC06B500123511 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoolTable/CoolTable-Prefix.pch";
+				INFOPLIST_FILE = "CoolTable/CoolTable-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0AB5397413FC06B500123511 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoolTable/CoolTable-Prefix.pch";
+				INFOPLIST_FILE = "CoolTable/CoolTable-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0AB5394713FC06B500123511 /* Build configuration list for PBXProject "CoolTable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AB5397013FC06B500123511 /* Debug */,
+				0AB5397113FC06B500123511 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AB5397213FC06B500123511 /* Build configuration list for PBXNativeTarget "CoolTable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AB5397313FC06B500123511 /* Debug */,
+				0AB5397413FC06B500123511 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0AB5394413FC06B500123511 /* Project object */;
+}
