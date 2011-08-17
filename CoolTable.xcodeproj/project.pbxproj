@@ -19,6 +19,8 @@
 		0AB5396C13FC06B500123511 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AB5396A13FC06B500123511 /* RootViewController.xib */; };
 		0AB5396F13FC06B500123511 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AB5396D13FC06B500123511 /* DetailViewController.xib */; };
 		0AB5397813FC0BCD00123511 /* CustomCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5397713FC0BCD00123511 /* CustomCellBackground.m */; };
+		0AB5397B13FC0FAC00123511 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5397A13FC0FAC00123511 /* Common.m */; };
+		0AB5398313FC2F1200123511 /* CustomHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5398213FC2F1200123511 /* CustomHeader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,10 @@
 		0AB5396E13FC06B500123511 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
 		0AB5397613FC0BCD00123511 /* CustomCellBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellBackground.h; sourceTree = "<group>"; };
 		0AB5397713FC0BCD00123511 /* CustomCellBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellBackground.m; sourceTree = "<group>"; };
+		0AB5397913FC0FAC00123511 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		0AB5397A13FC0FAC00123511 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		0AB5398113FC2F1200123511 /* CustomHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHeader.h; sourceTree = "<group>"; };
+		0AB5398213FC2F1200123511 /* CustomHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHeader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,10 @@
 			children = (
 				0AB5397613FC0BCD00123511 /* CustomCellBackground.h */,
 				0AB5397713FC0BCD00123511 /* CustomCellBackground.m */,
+				0AB5397913FC0FAC00123511 /* Common.h */,
+				0AB5397A13FC0FAC00123511 /* Common.m */,
+				0AB5398113FC2F1200123511 /* CustomHeader.h */,
+				0AB5398213FC2F1200123511 /* CustomHeader.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -189,6 +199,8 @@
 				0AB5396513FC06B500123511 /* RootViewController.m in Sources */,
 				0AB5396913FC06B500123511 /* DetailViewController.m in Sources */,
 				0AB5397813FC0BCD00123511 /* CustomCellBackground.m in Sources */,
+				0AB5397B13FC0FAC00123511 /* Common.m in Sources */,
+				0AB5398313FC2F1200123511 /* CustomHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
