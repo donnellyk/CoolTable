@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UITableViewController
+@interface RootViewController : UITableViewController {
+    NSMutableArray *thingsToLearn;
+    NSMutableArray *thingsLearned;
+    
+}
+
+
+@property (copy) NSMutableArray *thingsToLearn;
+@property (copy) NSMutableArray *thingsLearned;
 
 @end

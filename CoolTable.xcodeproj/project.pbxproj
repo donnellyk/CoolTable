@@ -18,6 +18,7 @@
 		0AB5396913FC06B500123511 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5396813FC06B500123511 /* DetailViewController.m */; };
 		0AB5396C13FC06B500123511 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AB5396A13FC06B500123511 /* RootViewController.xib */; };
 		0AB5396F13FC06B500123511 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AB5396D13FC06B500123511 /* DetailViewController.xib */; };
+		0AB5397813FC0BCD00123511 /* CustomCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5397713FC0BCD00123511 /* CustomCellBackground.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,18 +26,20 @@
 		0AB5395113FC06B500123511 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0AB5395313FC06B500123511 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0AB5395513FC06B500123511 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0AB5395913FC06B500123511 /* CoolTable-Info.plist */ = {isa = PBXFileReference; path = "CoolTable-Info.plist"; sourceTree = "<group>"; };
+		0AB5395913FC06B500123511 /* CoolTable-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoolTable-Info.plist"; sourceTree = "<group>"; };
 		0AB5395B13FC06B500123511 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0AB5395D13FC06B500123511 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0AB5395F13FC06B500123511 /* CoolTable-Prefix.pch */ = {isa = PBXFileReference; path = "CoolTable-Prefix.pch"; sourceTree = "<group>"; };
-		0AB5396013FC06B500123511 /* CoolTableAppDelegate.h */ = {isa = PBXFileReference; path = CoolTableAppDelegate.h; sourceTree = "<group>"; };
+		0AB5395F13FC06B500123511 /* CoolTable-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoolTable-Prefix.pch"; sourceTree = "<group>"; };
+		0AB5396013FC06B500123511 /* CoolTableAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoolTableAppDelegate.h; sourceTree = "<group>"; };
 		0AB5396113FC06B500123511 /* CoolTableAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolTableAppDelegate.m; sourceTree = "<group>"; };
-		0AB5396313FC06B500123511 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		0AB5396313FC06B500123511 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		0AB5396413FC06B500123511 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		0AB5396613FC06B500123511 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		0AB5396813FC06B500123511 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		0AB5396B13FC06B500123511 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
 		0AB5396E13FC06B500123511 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
+		0AB5397613FC0BCD00123511 /* CustomCellBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellBackground.h; sourceTree = "<group>"; };
+		0AB5397713FC0BCD00123511 /* CustomCellBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellBackground.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,7 @@
 		0AB5395713FC06B500123511 /* CoolTable */ = {
 			isa = PBXGroup;
 			children = (
+				0AB5397513FC0BA500123511 /* Classes */,
 				0AB5396013FC06B500123511 /* CoolTableAppDelegate.h */,
 				0AB5396113FC06B500123511 /* CoolTableAppDelegate.m */,
 				0AB5396313FC06B500123511 /* RootViewController.h */,
@@ -105,6 +109,15 @@
 				0AB5395F13FC06B500123511 /* CoolTable-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0AB5397513FC0BA500123511 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0AB5397613FC0BCD00123511 /* CustomCellBackground.h */,
+				0AB5397713FC0BCD00123511 /* CustomCellBackground.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +188,7 @@
 				0AB5396213FC06B500123511 /* CoolTableAppDelegate.m in Sources */,
 				0AB5396513FC06B500123511 /* RootViewController.m in Sources */,
 				0AB5396913FC06B500123511 /* DetailViewController.m in Sources */,
+				0AB5397813FC0BCD00123511 /* CustomCellBackground.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

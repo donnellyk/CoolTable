@@ -9,9 +9,10 @@
 #import "RootViewController.h"
 
 #import "DetailViewController.h"
+#import "CustomCellBackground.h"
 
 @implementation RootViewController
-
+@synthesize thingsLearned, thingsToLearn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,14 +34,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	self.title = @"Core Graphics!";
+    self.thingsToLearn = [NSMutableArray arrayWithObjects:@"Drawing Rects", 
+                          @"Drawing Gradients", @"Drawing Arcs", nil];
+    self.thingsLearned = [NSMutableArray arrayWithObjects:@"Table Views", 
+                          @"UIKit", @"Objective-C", nil];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -66,18 +70,23 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    //return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    return YES;
 }
 
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    if (section == 0) {
+        return thingsToLearn.count;
+    } else {
+        return thingsLearned.count;
+    }
 }
 
 // Customize the appearance of table view cells.
@@ -89,11 +98,26 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.backgroundView = [[CustomCellBackground alloc] init];
+        cell.selectedBackgroundView = [[CustomCellBackground alloc] init];
     }
 
     // Configure the cell.
-    cell.textLabel.text = NSLocalizedString(@"Detail", @"Detail");
+    if (indexPath.section == 0) {
+        cell.textLabel.text = [thingsToLearn objectAtIndex:indexPath.row];
+    } else {
+        cell.textLabel.text = [thingsLearned objectAtIndex:indexPath.row];
+    }
+    cell.textLabel.backgroundColor = [UIColor clearColor];
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return @"Things in Need of Learning";
+    } else {
+        return @"Things Learned";
+    }
 }
 
 /*
@@ -139,9 +163,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+    //DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
     // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    //[self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 @end
