@@ -11,9 +11,10 @@
 @interface RootViewController : UITableViewController {
     NSMutableArray *thingsToLearn;
     NSMutableArray *thingsLearned;
-    
+    BOOL showList;
 }
 
+-(void)toggleLists;
 
 @property (copy) NSMutableArray *thingsToLearn;
 @property (copy) NSMutableArray *thingsLearned;

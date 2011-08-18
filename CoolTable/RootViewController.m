@@ -10,6 +10,8 @@
 
 #import "DetailViewController.h"
 #import "CustomCellBackground.h"
+#import "CustomHeader.h"
+#import "CustomFooter.h"
 
 @implementation RootViewController
 @synthesize thingsLearned, thingsToLearn;
@@ -34,6 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    showList = false;
 	self.title = @"Core Graphics!";
     self.thingsToLearn = [NSMutableArray arrayWithObjects:@"Drawing Rects", 
                           @"Drawing Gradients", @"Drawing Arcs", nil];
@@ -82,6 +85,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (!showList) {
+        return 0;
+    }
     if (section == 0) {
         return thingsToLearn.count;
     } else {
@@ -100,15 +106,22 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.backgroundView = [[CustomCellBackground alloc] init];
         cell.selectedBackgroundView = [[CustomCellBackground alloc] init];
+        ((CustomCellBackground *)cell.selectedBackgroundView).selected = YES;
+
     }
 
     // Configure the cell.
     if (indexPath.section == 0) {
         cell.textLabel.text = [thingsToLearn objectAtIndex:indexPath.row];
+        ((CustomCellBackground *)cell.backgroundView).lastCell = indexPath.row == thingsToLearn.count - 1;
+        ((CustomCellBackground *)cell.selectedBackgroundView).lastCell = indexPath.row == thingsToLearn.count - 1;
     } else {
         cell.textLabel.text = [thingsLearned objectAtIndex:indexPath.row];
+        ((CustomCellBackground *)cell.backgroundView).lastCell = indexPath.row == thingsLearned.count - 1;
+        ((CustomCellBackground *)cell.selectedBackgroundView).lastCell = indexPath.row == thingsLearned.count - 1;
     }
     cell.textLabel.backgroundColor = [UIColor clearColor];
+    cell.textLabel.highlightedTextColor = [UIColor blackColor];
     return cell;
 }
 
@@ -118,6 +131,37 @@
     } else {
         return @"Things Learned";
     }
+}
+
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    CustomHeader *header = [[CustomHeader alloc] init];
+    header.titleLabel.text = [self tableView:tableView titleForHeaderInSection:section];
+    if (section == 1) {
+        header.lightColor = [UIColor colorWithRed:147.0/255.0 green:105.0/255.0 
+                                             blue:216.0/255.0 alpha:1.0];
+        header.darkColor = [UIColor colorWithRed:72.0/255.0 green:22.0/255.0 
+                                            blue:137.0/255.0 alpha:1.0];
+    }
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleLists)];
+    [header addGestureRecognizer:gestureRecognizer];
+    return header;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 50;
+}
+
+-(CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 15;
+}
+
+- (UIView *) tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [[CustomFooter alloc] init];
+}
+
+-(void)toggleLists {
+    showList = !showList;
+    [self.tableView reloadData];
 }
 
 /*

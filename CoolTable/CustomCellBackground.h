@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CustomCellBackground : UIView
-
+@interface CustomCellBackground : UIView {
+    BOOL lastCell;
+    BOOL selected;
+}
+@property  BOOL lastCell;
+@property  BOOL selected;
 @end
