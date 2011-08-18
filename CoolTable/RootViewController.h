@@ -11,12 +11,16 @@
 @interface RootViewController : UITableViewController {
     NSMutableArray *thingsToLearn;
     NSMutableArray *thingsLearned;
+    
     BOOL showList;
 }
 
--(void)toggleLists;
+-(void)toggleListsFromSender:(UITapGestureRecognizer *)sender;
 
-@property (copy) NSMutableArray *thingsToLearn;
-@property (copy) NSMutableArray *thingsLearned;
+@property (retain) NSMutableArray *thingsToLearn;
+@property (retain) NSMutableArray *thingsLearned;
+
+@property (retain) NSMutableArray *dataSourcesReserves;
+@property (retain) NSMutableArray *dataSources;
 
 @end

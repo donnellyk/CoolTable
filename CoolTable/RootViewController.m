@@ -15,6 +15,7 @@
 
 @implementation RootViewController
 @synthesize thingsLearned, thingsToLearn;
+@synthesize dataSources, dataSourcesReserves;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,10 +39,13 @@
     [super viewDidLoad];
     showList = false;
 	self.title = @"Core Graphics!";
-    self.thingsToLearn = [NSMutableArray arrayWithObjects:@"Drawing Rects", 
-                          @"Drawing Gradients", @"Drawing Arcs", nil];
+    self.thingsToLearn = [NSMutableArray arrayWithObjects:@"Rectangles", @"Glossy!", @"Other stuff!", nil];
     self.thingsLearned = [NSMutableArray arrayWithObjects:@"Table Views", 
                           @"UIKit", @"Objective-C", nil];
+    
+    //Good lord, this is ugly. But, need the deep copy.
+    self.dataSourcesReserves = [NSMutableArray arrayWithObjects:[[NSMutableArray alloc] initWithArray:thingsToLearn copyItems:YES], [[NSMutableArray alloc] initWithArray:thingsLearned copyItems:YES], nil];
+    self.dataSources = [NSMutableArray arrayWithObjects:[[NSMutableArray alloc] initWithArray:thingsToLearn copyItems:YES], [[NSMutableArray alloc] initWithArray:thingsLearned copyItems:YES], nil];
 }
 
 - (void)viewDidUnload
@@ -85,14 +89,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (!showList) {
-        return 0;
-    }
-    if (section == 0) {
+    return [[self.dataSources objectAtIndex:section] count];
+    
+    /*if (section == 0) {
         return thingsToLearn.count;
     } else {
         return thingsLearned.count;
-    }
+    }*/
 }
 
 // Customize the appearance of table view cells.
@@ -109,17 +112,12 @@
         ((CustomCellBackground *)cell.selectedBackgroundView).selected = YES;
 
     }
+    
+    NSMutableArray *data = [dataSources objectAtIndex:indexPath.section];
+    cell.textLabel.text = [data objectAtIndex:indexPath.row];
+    ((CustomCellBackground *)cell.backgroundView).lastCell = indexPath.row == data.count - 1;
+    ((CustomCellBackground *)cell.selectedBackgroundView).lastCell = indexPath.row == data.count - 1;
 
-    // Configure the cell.
-    if (indexPath.section == 0) {
-        cell.textLabel.text = [thingsToLearn objectAtIndex:indexPath.row];
-        ((CustomCellBackground *)cell.backgroundView).lastCell = indexPath.row == thingsToLearn.count - 1;
-        ((CustomCellBackground *)cell.selectedBackgroundView).lastCell = indexPath.row == thingsToLearn.count - 1;
-    } else {
-        cell.textLabel.text = [thingsLearned objectAtIndex:indexPath.row];
-        ((CustomCellBackground *)cell.backgroundView).lastCell = indexPath.row == thingsLearned.count - 1;
-        ((CustomCellBackground *)cell.selectedBackgroundView).lastCell = indexPath.row == thingsLearned.count - 1;
-    }
     cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.textLabel.highlightedTextColor = [UIColor blackColor];
     return cell;
@@ -136,13 +134,14 @@
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     CustomHeader *header = [[CustomHeader alloc] init];
     header.titleLabel.text = [self tableView:tableView titleForHeaderInSection:section];
+    header.sectionNumber = [NSNumber numberWithInt:section];
     if (section == 1) {
         header.lightColor = [UIColor colorWithRed:147.0/255.0 green:105.0/255.0 
                                              blue:216.0/255.0 alpha:1.0];
         header.darkColor = [UIColor colorWithRed:72.0/255.0 green:22.0/255.0 
                                             blue:137.0/255.0 alpha:1.0];
     }
-    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleLists)];
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleListsFromSender:)];
     [header addGestureRecognizer:gestureRecognizer];
     return header;
 }
@@ -159,9 +158,32 @@
     return [[CustomFooter alloc] init];
 }
 
--(void)toggleLists {
-    showList = !showList;
-    [self.tableView reloadData];
+-(void)toggleListsFromSender:(UITapGestureRecognizer *)sender {
+    UIView *touchedView = [self.view hitTest:[sender locationInView:self.view] withEvent:nil];
+    
+    int section = [((CustomHeader *)touchedView).sectionNumber intValue];
+    int count = [[dataSourcesReserves objectAtIndex:section] count];
+    NSMutableArray * indexes = [[NSMutableArray alloc] initWithCapacity:count];
+    for (int i = 0; i < count; i++) {
+        NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:i inSection:section];
+        [indexes addObject:newIndexPath];
+    }
+    
+    if ([[dataSources objectAtIndex:section] count] != 0) {
+        //Hide
+        [[dataSources objectAtIndex:section] removeAllObjects];
+        [self.tableView deleteRowsAtIndexPaths:indexes withRowAnimation:UITableViewRowAnimationFade];
+    } else {
+        //Show
+        NSMutableArray *tmp = [[NSMutableArray alloc] initWithArray:[dataSourcesReserves objectAtIndex:section] copyItems:YES]; //Deep copy!
+        [dataSources removeObjectAtIndex:section];
+        [dataSources insertObject:tmp atIndex:section];
+        
+        [self.tableView insertRowsAtIndexPaths:indexes withRowAnimation:UITableViewRowAnimationFade];
+    }
+    
+    //[self.tableView reloadData];
+
 }
 
 /*

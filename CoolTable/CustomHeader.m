@@ -10,7 +10,7 @@
 #import "Common.h"
 
 @implementation CustomHeader
-@synthesize titleLabel, lightColor, darkColor;
+@synthesize titleLabel, lightColor, darkColor, sectionNumber;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -30,7 +30,7 @@
         self.lightColor = [UIColor colorWithRed:105.0f/255.0f green:179.0f/255.0f 
                                            blue:216.0f/255.0f alpha:1.0];
         self.darkColor = [UIColor colorWithRed:21.0/255.0 green:92.0/255.0 
-                                          blue:136.0/255.0 alpha:1.0]; 
+                                          blue:136.0/255.0 alpha:1.0];
     }
     return self;
 }
@@ -65,6 +65,7 @@
     
     CGContextSetFillColorWithColor(context, whiteColor);
     CGContextFillRect(context, paperRect);
+    
     
     CGContextSaveGState(context);
     CGContextSetShadowWithColor(context, CGSizeMake(0, 2), 3.0, shadowColor);

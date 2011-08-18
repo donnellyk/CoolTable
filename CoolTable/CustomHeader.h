@@ -14,10 +14,12 @@
     UIColor *darkColor;
     CGRect coloredBoxRect;
     CGRect paperRect;
+    
 }
 
 // After @interface
 @property (retain) UILabel *titleLabel;
 @property (retain) UIColor *lightColor;
 @property (retain) UIColor *darkColor;
+@property (retain) NSNumber *sectionNumber;
 @end
