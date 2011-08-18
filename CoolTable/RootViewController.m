@@ -90,12 +90,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [[self.dataSources objectAtIndex:section] count];
-    
-    /*if (section == 0) {
-        return thingsToLearn.count;
-    } else {
-        return thingsLearned.count;
-    }*/
 }
 
 // Customize the appearance of table view cells.
