@@ -104,7 +104,6 @@
         cell.backgroundView = [[CustomCellBackground alloc] init];
         cell.selectedBackgroundView = [[CustomCellBackground alloc] init];
         ((CustomCellBackground *)cell.selectedBackgroundView).selected = YES;
-
     }
     
     NSMutableArray *data = [dataSources objectAtIndex:indexPath.section];

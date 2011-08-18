@@ -11,6 +11,8 @@
 @interface CustomCellBackground : UIView {
     BOOL lastCell;
     BOOL selected;
+    CGRect paperRect;
+
 }
 @property  BOOL lastCell;
 @property  BOOL selected;
