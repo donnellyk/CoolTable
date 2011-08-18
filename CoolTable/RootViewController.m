@@ -39,7 +39,7 @@
     [super viewDidLoad];
     showList = false;
 	self.title = @"Core Graphics!";
-    self.thingsToLearn = [NSMutableArray arrayWithObjects:@"Rectangles", @"Glossy!", @"Other stuff!", nil];
+    self.thingsToLearn = [NSMutableArray arrayWithObjects:@"Rectangles", @"Other stuff!", nil];
     self.thingsLearned = [NSMutableArray arrayWithObjects:@"Table Views", 
                           @"UIKit", @"Objective-C", nil];
     
@@ -84,7 +84,7 @@
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return [dataSources count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -101,17 +101,20 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.backgroundView = [[CustomCellBackground alloc] init];
-        cell.selectedBackgroundView = [[CustomCellBackground alloc] init];
-        ((CustomCellBackground *)cell.selectedBackgroundView).selected = YES;
+        
 
     }
+    //For some reason, background always needs redrawn. The "ReusableCell" thing doesn't maintain order.
+    cell.backgroundView = [[CustomCellBackground alloc] init];
+    cell.selectedBackgroundView = [[CustomCellBackground alloc] init];
+    ((CustomCellBackground *)cell.selectedBackgroundView).selected = YES;
     
     NSMutableArray *data = [dataSources objectAtIndex:indexPath.section];
     cell.textLabel.text = [data objectAtIndex:indexPath.row];
+    
     ((CustomCellBackground *)cell.backgroundView).lastCell = indexPath.row == data.count - 1;
     ((CustomCellBackground *)cell.selectedBackgroundView).lastCell = indexPath.row == data.count - 1;
-
+    
     cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.textLabel.highlightedTextColor = [UIColor blackColor];
     return cell;
