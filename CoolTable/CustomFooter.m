@@ -24,7 +24,7 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    CGContextRef context = UIGraphicsGetCurrentContext();
+    /*CGContextRef context = UIGraphicsGetCurrentContext();
     
     CGColorRef whiteColor = [UIColor colorWithRed:1.0 green:1.0 
                                              blue:1.0 alpha:1.0].CGColor; 
@@ -72,7 +72,7 @@
     CGContextAddPath(context, arcPath);
     CGContextSetShadowWithColor(context, CGSizeMake(0, 2), 3.0, shadowColor);
     CGContextFillPath(context);
-    CFRelease(arcPath);
+    CFRelease(arcPath);*/
 }
 
 

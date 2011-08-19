@@ -40,16 +40,15 @@
     [super viewDidLoad];
     showList = false;
 	self.title = @"Core Graphics!";
-    self.thingsToLearn = [NSMutableArray arrayWithObjects:@"Rectangles", @"Glossy!", @"Other stuff!", @"One more thing", nil];
+    self.thingsToLearn = [NSMutableArray arrayWithObjects:@"Rectangles", @"Glossy!", @"Other stuff!", @"One more thing", @"Rectangles", @"Glossy!", @"Other stuff!", @"One more thing", @"Rectangles", @"Glossy!", @"Other stuff!", @"One more thing", nil];
     self.thingsLearned = [NSMutableArray arrayWithObjects:@"Table Views", 
-                          @"UIKit", @"Objective-C", nil];
+                          @"UIKit", @"Objective-C", @"Rectangles", @"Glossy!", @"Other stuff!", @"One more thing", @"Rectangles", @"Glossy!", @"Other stuff!", @"One more thing", nil];
     
     //Good lord, this is ugly. But, need the deep copy.
     self.dataSourcesReserves = [NSMutableArray arrayWithObjects:[[NSMutableArray alloc] initWithArray:thingsToLearn copyItems:YES], [[NSMutableArray alloc] initWithArray:thingsLearned copyItems:YES], nil];
     self.dataSources = [NSMutableArray arrayWithObjects:[[NSMutableArray alloc] initWithArray:thingsToLearn copyItems:YES], [[NSMutableArray alloc] initWithArray:thingsLearned copyItems:YES], nil];
     
     self.tableView.backgroundView = [[Pattern alloc] init];
-    //[self.view addSubview:ptr];
     
 }
 
