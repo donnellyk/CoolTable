@@ -22,6 +22,7 @@
 
     RootViewController *controller = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
+    self.navigationController.view.backgroundColor = [UIColor blackColor];
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;

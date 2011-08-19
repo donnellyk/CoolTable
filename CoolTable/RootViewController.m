@@ -101,10 +101,11 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.backgroundView = [[CustomCellBackground alloc] init];
-        cell.selectedBackgroundView = [[CustomCellBackground alloc] init];
-        ((CustomCellBackground *)cell.selectedBackgroundView).selected = YES;
+        
     }
+    cell.backgroundView = [[CustomCellBackground alloc] init];
+    cell.selectedBackgroundView = [[CustomCellBackground alloc] init];
+    ((CustomCellBackground *)cell.selectedBackgroundView).selected = YES;
     
     NSMutableArray *data = [dataSources objectAtIndex:indexPath.section];
     cell.textLabel.text = [data objectAtIndex:indexPath.row];
