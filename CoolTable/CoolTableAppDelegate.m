@@ -9,6 +9,7 @@
 #import "CoolTableAppDelegate.h"
 
 #import "RootViewController.h"
+#import "Pattern.h"
 
 @implementation CoolTableAppDelegate
 
@@ -22,7 +23,12 @@
 
     RootViewController *controller = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
-    self.navigationController.view.backgroundColor = [UIColor blackColor];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    
+    Pattern * ptr = [[Pattern alloc] init];
+    [self.navigationController.view addSubview:ptr];
+    [self.navigationController.view sendSubviewToBack:ptr];
+    
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;

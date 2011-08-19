@@ -12,6 +12,7 @@
 #import "CustomCellBackground.h"
 #import "CustomHeader.h"
 #import "CustomFooter.h"
+#import "Pattern.h"
 
 @implementation RootViewController
 @synthesize thingsLearned, thingsToLearn;
@@ -46,6 +47,10 @@
     //Good lord, this is ugly. But, need the deep copy.
     self.dataSourcesReserves = [NSMutableArray arrayWithObjects:[[NSMutableArray alloc] initWithArray:thingsToLearn copyItems:YES], [[NSMutableArray alloc] initWithArray:thingsLearned copyItems:YES], nil];
     self.dataSources = [NSMutableArray arrayWithObjects:[[NSMutableArray alloc] initWithArray:thingsToLearn copyItems:YES], [[NSMutableArray alloc] initWithArray:thingsLearned copyItems:YES], nil];
+    
+    self.tableView.backgroundView = [[Pattern alloc] init];
+    //[self.view addSubview:ptr];
+    
 }
 
 - (void)viewDidUnload

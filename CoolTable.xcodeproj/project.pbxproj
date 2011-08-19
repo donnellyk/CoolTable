@@ -22,6 +22,7 @@
 		0AB5397B13FC0FAC00123511 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5397A13FC0FAC00123511 /* Common.m */; };
 		0AB5398313FC2F1200123511 /* CustomHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5398213FC2F1200123511 /* CustomHeader.m */; };
 		0AB5398613FC448000123511 /* CustomFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5398513FC448000123511 /* CustomFooter.m */; };
+		0ACDF95C13FEBC0B009AEEE3 /* Pattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACDF95B13FEBC0B009AEEE3 /* Pattern.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		0AB5398213FC2F1200123511 /* CustomHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHeader.m; sourceTree = "<group>"; };
 		0AB5398413FC447F00123511 /* CustomFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFooter.h; sourceTree = "<group>"; };
 		0AB5398513FC448000123511 /* CustomFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFooter.m; sourceTree = "<group>"; };
+		0ACDF95A13FEBC0B009AEEE3 /* Pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pattern.h; sourceTree = "<group>"; };
+		0ACDF95B13FEBC0B009AEEE3 /* Pattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pattern.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,8 @@
 				0AB5398213FC2F1200123511 /* CustomHeader.m */,
 				0AB5398413FC447F00123511 /* CustomFooter.h */,
 				0AB5398513FC448000123511 /* CustomFooter.m */,
+				0ACDF95A13FEBC0B009AEEE3 /* Pattern.h */,
+				0ACDF95B13FEBC0B009AEEE3 /* Pattern.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				0AB5397B13FC0FAC00123511 /* Common.m in Sources */,
 				0AB5398313FC2F1200123511 /* CustomHeader.m in Sources */,
 				0AB5398613FC448000123511 /* CustomFooter.m in Sources */,
+				0ACDF95C13FEBC0B009AEEE3 /* Pattern.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
