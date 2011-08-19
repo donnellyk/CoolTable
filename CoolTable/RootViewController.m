@@ -39,7 +39,7 @@
     [super viewDidLoad];
     showList = false;
 	self.title = @"Core Graphics!";
-    self.thingsToLearn = [NSMutableArray arrayWithObjects:@"Rectangles", @"Glossy!", @"Other stuff!", nil];
+    self.thingsToLearn = [NSMutableArray arrayWithObjects:@"Rectangles", @"Glossy!", @"Other stuff!", @"One more thing" nil];
     self.thingsLearned = [NSMutableArray arrayWithObjects:@"Table Views", 
                           @"UIKit", @"Objective-C", nil];
     
