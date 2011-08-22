@@ -61,23 +61,40 @@
     CGColorRef whiteColor = [UIColor colorWithRed:1.0 green:1.0 
                                              blue:1.0 alpha:1.0].CGColor;
     CGColorRef shadowColor = [UIColor colorWithRed:0.2 green:0.2 
-                                              blue:0.2 alpha:0.5].CGColor;   
+                                              blue:0.2 alpha:0.5].CGColor;
+    
+    const CGFloat *components = CGColorGetComponents(darkColor.CGColor);
+    CGFloat red = components[0];
+    CGFloat green = components[1];
+    CGFloat blue = components[2];
+    
+    CGColorRef foldColor = [UIColor colorWithRed:red-(8/255) green:green-(61/255) blue:blue-(91/255) alpha:1.0].CGColor;
     
     CGContextSetFillColorWithColor(context, whiteColor);
-    CGContextFillRect(context, paperRect);
+    //CGContextFillRect(context, paperRect);
     
     
     CGContextSaveGState(context);
     CGContextSetShadowWithColor(context, CGSizeMake(0, 2), 3.0, shadowColor);
     CGContextSetFillColorWithColor(context, lightColor.CGColor);
-    CGContextFillRect(context, coloredBoxRect);
+    //CGContextFillRect(context, coloredBoxRect);
     CGContextRestoreGState(context);
     
-    drawGlossAndGradient(context, coloredBoxRect, lightColor.CGColor, darkColor.CGColor);  
-    
+    //drawGlossAndGradient(context, coloredBoxRect, lightColor.CGColor, darkColor.CGColor);  
+    /*
     CGContextSetStrokeColorWithColor(context, darkColor.CGColor);
     CGContextSetLineWidth(context, 1.0);    
     CGContextStrokeRect(context, rectFor1PxStroke(coloredBoxRect));
+     */
+    CGMutablePathRef pathRef = CGPathCreateMutable();
+    
+    //CGPathMoveToPoint(pathRef, CGAffineTransformIdentity, coloredBoxRect.origin.x, CGRectGetMaxY(coloredBoxRect))
+    
+    //CGPathMoveToPoint(pathRef, CGAffineTransformIdentity, coloredBoxRect.origin.x, CGRectGetMaxY(coloredBoxRect));
+    CGContextMoveToPoint(context, coloredBoxRect.origin.x, CGRectGetMaxY(coloredBoxRect));
+    CGContextAddLineToPoint(context, CGRectGetMinX(paperRect), CGRectGetMaxY(paperRect));
+    CGContextAddLineToPoint(context, CGRectGetMinX(paperRect), CGRectGetMinX(paperRect));
+    CGContextSetFillColorWithColor(context, foldColor);
 }
 
 
